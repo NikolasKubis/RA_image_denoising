@@ -27,15 +27,7 @@ data=[normal_1 normal_2 normal_3];   %||||||...||||2x1100
 
 
 
-% Now lets start with the Expectation Maximization (EM) algorithm. 
-% The algorithm needs the number of mixands and the complete data set
-% In the E-step, for each sample we compute the posterior probabilities.
-% Given K mixands, we are going to have K values for each data point.
-% Thus, for N data points, we are going to have an NxK matrix. Each column
-% refers to a mixand P(Z=k|X_i), i=1,...,N. Each column then is used to
-% calculate the updated means and covariance for each mixand. 
 
-% let's built the function. 
 
 
 
