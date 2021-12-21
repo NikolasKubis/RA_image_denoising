@@ -120,7 +120,3 @@ psnr_risk=psnr(reconstructed_risk_image,im2double(lenna_double))
 ssim_mmse=ssim(reconstructed_mmse_image,im2double(lenna_double))
 
 ssim_risk=ssim(reconstructed_risk_image,im2double(lenna_double))
-
-%Vasika nai, oso ayxaneis to dimensionality tou patch, toso pio diakrita / distinct einai ta 
-%patches metaxy tous, pou simainei oti dyskola na exoun erthei apo idio mixand. 
-%Theleis loipon perissotera mixands gia na ta kaneis decode.
