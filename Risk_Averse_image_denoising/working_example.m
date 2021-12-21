@@ -15,33 +15,8 @@ mu3=[2;9];
 sigma_3=[0.1 0;0 0.2];
 normal_3 = mvnrnd(mu3,sigma_3,200)';
 
-%The first one is centered on the origin while the second one on [0.5 0.5].
-%We generate data from these, 100 points from each one and our goal is to
-%fit a GMM on these data. Normally the parameters of the GMM should be as
-%above with the weight of the first one to be 10 times larger of the second
-%one -since the samples are 10 times more...
 
-% First I am going to stack together the data to form the complete data set
 data=[normal_1 normal_2 normal_3];   %||||||...||||2x1100
-
-
-
-
-% Now lets start with the Expectation Maximization (EM) algorithm. 
-% The algorithm needs the number of mixands and the complete data set
-% In the E-step, for each sample we compute the posterior probabilities.
-% Given K mixands, we are going to have K values for each data point.
-% Thus, for N data points, we are going to have an NxK matrix. Each column
-% refers to a mixand P(Z=k|X_i), i=1,...,N. Each column then is used to
-% calculate the updated means and covariance for each mixand. 
-
-% let's built the function. 
-
-
-
-
-% In the E-step, for each data point X calculate the posterior and put it
-% into the row of a NxK matrix. But first create zeros of NxK..
 
 %given N =number of samples and K=number of mixands
 N=size(data,2); %#cols
@@ -171,8 +146,7 @@ fsurf(gmPDF,[-4 10])
 data_and_index=[data;i']; % first two rows are the data.
 
 
-% search and if  the index is i, create a struct that contains the data
-% point and the color (as a vector ).
+
 
 
 
