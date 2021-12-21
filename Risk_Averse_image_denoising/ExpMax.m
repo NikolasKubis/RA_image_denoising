@@ -15,14 +15,9 @@ mu3=[2;9];
 sigma_3=[0.1 0;0 0.2];
 normal_3 = mvnrnd(mu3,sigma_3,200)';
 
-%The first one is centered on the origin while the second one on [0.5 0.5].
-%We generate data from these, 100 points from each one and our goal is to
-%fit a GMM on these data. Normally the parameters of the GMM should be as
-%above with the weight of the first one to be 10 times larger of the second
-%one -since the samples are 10 times more...
 
 % First I am going to stack together the data to form the complete data set
-data=[normal_1 normal_2 normal_3];   %||||||...||||2x1100
+data=[normal_1 normal_2 normal_3];   %||||||...||||
 
 
 
@@ -31,9 +26,6 @@ data=[normal_1 normal_2 normal_3];   %||||||...||||2x1100
 
 
 
-
-% In the E-step, for each data point X calculate the posterior and put it
-% into the row of a NxK matrix. But first create zeros of NxK..
 
 %given N =number of samples and K=number of mixands
 N=size(data,2); %#cols
@@ -161,10 +153,6 @@ fsurf(gmPDF,[-4 10])
 % in order to color ta eniamera
 [~,i]=max(post_belief,[],2); % return the position of the maximum for each row.
 data_and_index=[data;i']; % first two rows are the data.
-
-
-% search and if  the index is i, create a struct that contains the data
-% point and the color (as a vector ).
 
 
 
